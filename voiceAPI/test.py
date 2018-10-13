@@ -1,6 +1,7 @@
 import os
 from pocketsphinx import LiveSpeech, Decoder, get_model_path
 
+MODEL_PATH = 'D:/Downloads/en-uk1'
 model_path = get_model_path()
 
 speech = LiveSpeech(
@@ -10,13 +11,14 @@ speech = LiveSpeech(
     no_search = False,
     full_utt = False,
     hmm = os.path.join(model_path, 'en-us'),
-    # lm = False,
     lm = os.path.join(model_path, 'en-us.lm.bin'),
     dic = os.path.join(model_path, 'cmudict-en-us.dict'),
-    #dic ='001.dict',
-    #kws = '001.list'
+    # hmm = MODEL_PATH
+    # lm = False,
+    # dic ='dicts/002.dict',
+    # kws = 'lists/002.list'
     )
 
 for phrase in speech:
     print phrase
-    #print(phrase.segments(detailed=False))
+    # print (phrase.segments(detailed=True))
