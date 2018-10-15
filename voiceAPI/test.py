@@ -20,5 +20,5 @@ speech = LiveSpeech(
     )
 
 for phrase in speech:
-    print phrase
-    # print (phrase.segments(detailed=True))
+    #print phrase
+    print (phrase.segments(detailed=True))
